@@ -54,51 +54,65 @@ export default function Services() {
       ],
       note:
         "Helpful for clients who want to be more proactive and thoughtful about tax decisions throughout the year.",
-    }
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 px-6 py-20 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        <div className="max-w-3xl">
-          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+    <div className="min-h-screen bg-[#FAF5EA] text-[#1D211E]">
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
+        <div className="mb-12 max-w-3xl">
+          <div className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8C6A35]">
             Services
           </div>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
-            Tax support built for a wide range of clients and situations.
+
+          <h1 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-[#183A31] sm:text-5xl">
+            Tax services
           </h1>
+
+          <p className="mt-5 text-base leading-8 text-[#5E574A]">
+            Professional tax preparation and planning for individuals, families,
+            business owners, estates, and trusts.
+          </p>
         </div>
 
-        <div className="mt-14 grid gap-8">
-          {services.map((service) => (
+        <div className="divide-y divide-[#D6C6A3] border-y border-[#D6C6A3]">
+          {services.map((service, index) => (
             <section
               key={service.title}
-              className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:p-10"
+              className="grid gap-8 py-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-12"
             >
-              <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-                <div>
-                  <h2 className="text-2xl font-semibold text-slate-950">
-                    {service.title}
-                  </h2>
-                  <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
-                    {service.description}
-                  </p>
-                  <p className="mt-5 text-sm leading-7 text-slate-500">
-                    {service.note}
-                  </p>
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[#8C6A35]">
+                  {String(index + 1).padStart(2, "0")}
                 </div>
 
-                <div className="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
-                  <div className="text-sm font-medium uppercase tracking-[0.15em] text-slate-500">
+                <h2 className="mt-4 max-w-md font-serif text-3xl font-semibold tracking-tight text-[#183A31] sm:text-4xl">
+                  {service.title}
+                </h2>
+              </div>
+
+              <div>
+                <p className="max-w-3xl text-base leading-8 text-[#4F4A40]">
+                  {service.description}
+                </p>
+
+                <p className="mt-5 max-w-3xl border-l border-[#A77A35] pl-5 text-sm leading-7 text-[#6B614F]">
+                  {service.note}
+                </p>
+
+                <div className="mt-8">
+                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8C6A35]">
                     Common situations
                   </div>
-                  <div className="mt-4 space-y-3">
+
+                  <div className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
                     {service.items.map((item) => (
                       <div
                         key={item}
-                        className="rounded-xl bg-white px-4 py-3 text-sm text-slate-800 ring-1 ring-slate-200"
+                        className="flex gap-3 text-sm leading-6 text-[#183A31]"
                       >
-                        {item}
+                        <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-[#A77A35]" />
+                        <span>{item}</span>
                       </div>
                     ))}
                   </div>
@@ -107,8 +121,7 @@ export default function Services() {
             </section>
           ))}
         </div>
-
-      </div>
+      </section>
     </div>
   );
 }

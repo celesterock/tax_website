@@ -2,6 +2,7 @@ export default function Resources() {
   const resourceGroups = [
     {
       title: "Federal",
+      description: "IRS resources for refunds, payments, forms, and withholding.",
       links: [
         {
           name: "Check Refund Status",
@@ -27,6 +28,8 @@ export default function Resources() {
     },
     {
       title: "California",
+      description:
+        "California Franchise Tax Board resources for state filings, payments, and forms.",
       links: [
         {
           name: "Check Refund Status",
@@ -48,6 +51,8 @@ export default function Resources() {
     },
     {
       title: "General",
+      description:
+        "Common reference links for due dates, records, and general tax information.",
       links: [
         {
           name: "Tax Due Dates",
@@ -63,47 +68,78 @@ export default function Resources() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 px-6 py-20 text-slate-900 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="max-w-3xl">
-          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Tax Resources
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            Helpful links for refunds, payments, forms, and general tax
-            information.
+    <div className="min-h-screen bg-[#FAF5EA] text-[#1D211E]">
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
+        {/* PAGE INTRO */}
+        <div className="mb-14 grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-end">
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8C6A35]">
+              Resources
+            </div>
+
+            <h1 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-[#183A31] sm:text-5xl">
+              Tax resources
+            </h1>
+          </div>
+
+          <p className="max-w-3xl text-base leading-8 text-[#5E574A]">
+            Helpful links for refunds, payments, forms, due dates, withholding,
+            and general tax information.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {resourceGroups.map((group) => (
-            <div
+        {/* RESOURCE GROUPS */}
+        <div className="divide-y divide-[#D6C6A3] border-y border-[#D6C6A3]">
+          {resourceGroups.map((group, index) => (
+            <section
               key={group.title}
-              className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm"
+              className="grid gap-8 py-12 lg:grid-cols-[0.34fr_0.66fr] lg:gap-12"
             >
-              <h2 className="text-2xl font-semibold text-slate-950">
-                {group.title}
-              </h2>
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[#8C6A35]">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
 
-              <div className="mt-6 space-y-3">
-                {group.links.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-100 transition"
-                  >
-                    {link.name}
-                  </a>
-                ))}
+                <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-[#183A31] sm:text-4xl">
+                  {group.title}
+                </h2>
+
+                <p className="mt-4 max-w-md text-sm leading-7 text-[#6B614F]">
+                  {group.description}
+                </p>
               </div>
-            </div>
+
+              <div>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {group.links.map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group border border-[#D6C6A3] bg-[#FBF8F1] px-5 py-4 text-sm font-medium text-[#183A31] transition hover:border-[#8C6A35] hover:bg-[#F7F0E3]"
+                    >
+                      <div className="flex items-center justify-between gap-4">
+                        <span>{link.name}</span>
+                        <span className="text-[#8C6A35] transition group-hover:translate-x-1">
+                          →
+                        </span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </section>
           ))}
         </div>
-      </div>
+
+        {/* NOTE */}
+        <div className="mt-10 max-w-3xl border-l border-[#A77A35] pl-5 text-sm leading-7 text-[#6B614F]">
+          These links are provided as convenient references to federal and state
+          tax resources. For questions about how a tax rule applies to your
+          specific situation, professional guidance is recommended.
+        </div>
+      </section>
     </div>
   );
 }
