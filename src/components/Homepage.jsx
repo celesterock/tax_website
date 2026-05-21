@@ -3,6 +3,8 @@ import homepageBackground from "../assets/homepage-vintage-background.png";
 import individualIcon from "../assets/icon-individual.png";
 import businessIcon from "../assets/icon-business.png";
 import planningIcon from "../assets/icon-planning.png";
+import "../styles/homepage.css";
+
 
 function LedgerLines() {
   return (
@@ -44,8 +46,6 @@ export default function Homepage() {
       <main>
         {/* HERO */}
 <section className="homepage-hero">
-  <LedgerLines />
-
   <div className="homepage-hero-inner">
     <div className="homepage-hero-copy">
       <div className="homepage-eyebrow">Foley Tax, OC</div>
@@ -146,125 +146,69 @@ export default function Homepage() {
 </section>
 
         {/* INTRO */}
-        <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[#9F7435]">
-                A More Attentive Standard
-              </div>
+<section className="homepage-intro-section">
+  <div className="homepage-section-inner homepage-intro-grid">
+    <div className="homepage-section-heading">
+      <div className="homepage-section-eyebrow">
+        A More Attentive Standard
+      </div>
 
-              <h2 className="mt-4 max-w-xl font-serif text-4xl font-semibold tracking-tight text-[#101b0b] sm:text-5xl">
-                For clients who want more than a rushed filing.
-              </h2>
-            </div>
+      <h2 className="homepage-section-title">
+        For clients who want more than a rushed filing.
+      </h2>
+    </div>
 
-            <div className="space-y-6 text-base leading-8 text-[#5C5548]">
-              <p>
-                Tax preparation should not feel impersonal, rushed, or unclear.
-                Our promise is to provide a more thoughtful experience — one
-                that considers the client’s full situation, explains what
-                matters, and handles the details with care.
-              </p>
+    <div className="homepage-intro-copy">
+      <p>
+        Tax preparation should not feel impersonal, rushed, or unclear. Our
+        promise is to provide a more thoughtful experience — one that considers
+        the client’s full situation, explains what matters, and handles the
+        details with care.
+      </p>
 
-              <p>
-                Whether the matter is straightforward or more involved, the work
-                is approached with the same professional standard: organization,
-                accuracy, discretion, and clear communication.
-              </p>
-            </div>
-          </div>
-        </section>
+      <p>
+        Whether the matter is straightforward or more involved, the work is
+        approached with the same professional standard: organization, accuracy,
+        discretion, and clear communication.
+      </p>
+    </div>
+  </div>
+</section>
 
-        {/* SERVICES */}
-        <section className="border-y border-[#B89A62]/25 bg-[#EFE3CB]/45">
-          <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-            <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-              <div>
-                <button
-                  onClick={() => navigate("/services")}
-                  className="text-xs font-semibold uppercase tracking-[0.28em] text-[#9F7435] transition hover:text-[#101b0b]"
-                >
-                  Services
-                </button>
+{/* SERVICES */}
+<section className="homepage-services-section">
+  <LedgerLines />
 
-                <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-[#101b0b] sm:text-5xl">
-                  Areas of focus.
-                </h2>
-              </div>
-            </div>
+  <div className="homepage-section-inner">
+    <div className="homepage-services-heading-row">
+      <div className="homepage-section-heading">
+        <button
+          onClick={() => navigate("/services")}
+          className="homepage-section-eyebrow homepage-section-button"
+        >
+          Services
+        </button>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {services.map((service) => (
-                <div
-                  key={service.title}
-                  className="border border-[#B89A62]/35 bg-[#F7F0E3] p-7 shadow-sm transition hover:-translate-y-1 hover:border-[#9F7435] hover:shadow-lg"
-                >
-                  <div className="mb-6 h-px w-14 bg-[#9F7435]" />
-                  <h3 className="font-serif text-2xl font-semibold text-[#101b0b]">
-                    {service.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-[#5C5548]">
-                    {service.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <h2 className="homepage-section-title">Areas of focus.</h2>
+      </div>
+    </div>
 
-        {/* DIFFERENTIATOR */}
-        <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <div className="border border-[#B89A62]/35 bg-[#101b0b] p-8 text-[#F7F0E3]">
-              <div className="border border-[#C9B48A]/30 p-8">
-                <div className="text-xs font-semibold uppercase tracking-[0.28em] text-[#C9B48A]">
-                  Professional Approach
-                </div>
+    <div className="homepage-services-grid">
+      {services.map((service) => (
+        <div key={service.title} className="homepage-service-card">
+          <div className="homepage-service-rule" />
 
-                <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight">
-                  Clear guidance without the high-volume feel.
-                </h2>
+          <h3 className="homepage-service-title">{service.title}</h3>
 
-                <p className="mt-6 text-base leading-8 text-[#D8C9A9]">
-                  The practice is designed around careful review and client
-                  understanding — not simply moving returns through a queue.
-                </p>
-              </div>
-            </div>
+          <p className="homepage-service-text">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
-            <div className="space-y-6">
-              <div className="border-l border-[#B89A62] pl-6">
-                <h3 className="font-serif text-2xl font-semibold text-[#101b0b]">
-                  Detail-oriented preparation
-                </h3>
-                <p className="mt-2 text-sm leading-7 text-[#5C5548]">
-                  Each return is reviewed with attention to the client’s facts,
-                  documents, and filing position.
-                </p>
-              </div>
 
-              <div className="border-l border-[#B89A62] pl-6">
-                <h3 className="font-serif text-2xl font-semibold text-[#101b0b]">
-                  Planning-minded perspective
-                </h3>
-                <p className="mt-2 text-sm leading-7 text-[#5C5548]">
-                  The work is not limited to compliance. Where appropriate, tax
-                  planning opportunities are identified and discussed.
-                </p>
-              </div>
 
-              <div className="border-l border-[#B89A62] pl-6">
-                <h3 className="font-serif text-2xl font-semibold text-[#101b0b]">
-                  Clear communication
-                </h3>
-                <p className="mt-2 text-sm leading-7 text-[#5C5548]">
-                  Clients should understand what is relevant, what is needed,
-                  and what decisions may affect their tax outcome.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
   );

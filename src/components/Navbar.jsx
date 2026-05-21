@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "../styles/navbar.css";
-import "../styles/homepage.css";
+// import "../styles/homepage.css";
 
 function BrandLockup() {
   return (
@@ -22,15 +22,27 @@ function BrandLockup() {
       <div className="navbar-brand-text">
         <div className="navbar-title">Foley Tax, OC</div>
         <div className="navbar-rule" />
-        <div className="navbar-subtitle">Individual &amp; Business Tax Services</div>
+        <div className="navbar-subtitle">
+          Individual &amp; Business Tax Services
+        </div>
       </div>
     </Link>
   );
 }
 
-function NavLink({ to, children, active = false }) {
+function NavLink({ to, children }) {
+  const location = useLocation();
+
+  const isActive =
+    to === "/"
+      ? location.pathname === "/"
+      : location.pathname.startsWith(to);
+
   return (
-    <Link to={to} className={`navbar-link ${active ? "navbar-link-active" : ""}`}>
+    <Link
+      to={to}
+      className={`navbar-link ${isActive ? "navbar-link-active" : ""}`}
+    >
       {children}
     </Link>
   );
@@ -44,9 +56,7 @@ export default function Navbar() {
 
         <div className="navbar-right">
           <nav className="navbar-nav">
-            <NavLink to="/" active>
-              Home
-            </NavLink>
+            <NavLink to="/">Home</NavLink>
             <NavLink to="/services">Services</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/resources">Resources</NavLink>

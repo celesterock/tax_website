@@ -1,0 +1,231 @@
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 30px,
+      rgba(193, 154, 74, 0.055) 30px,
+      rgba(193, 154, 74, 0.055) 31px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 30px,
+      rgba(193, 154, 74, 0.055) 30px,
+      rgba(193, 154, 74, 0.055) 31px
+    ),
+    radial-gradient(circle at top left, rgba(245, 233, 212, 0.05), transparent 34%),
+    linear-gradient(180deg, #08170b 0%, #061107 100%);
+  border-top: 1px solid rgba(193, 154, 74, 0.72);
+  color: #f7f0e3;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(193, 154, 74, 0.08), transparent 28%),
+    linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.18));
+}
+
+.footer-inner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 64px, 1380px);
+  margin: 0 auto;
+  padding: 34px 0 18px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 0.7fr 0.7fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.footer-brand {
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+}
+
+.footer-logo-link {
+  display: block;
+  flex-shrink: 0;
+}
+
+.footer-logo {
+  width: 64px;
+  height: 76px;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 30px;
+  line-height: 0.95;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f5e9d4;
+  white-space: nowrap;
+}
+
+.footer-rule {
+  width: 270px;
+  height: 1px;
+  margin-top: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(193, 154, 74, 0.95),
+    rgba(193, 154, 74, 0.35)
+  );
+}
+.footer-subtitle {
+  margin-top: 9px;
+  font-family: Georgia, serif;
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #c19a4a;
+}
+
+.footer-description {
+  max-width: 500px;
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #d8c9a9;
+}
+
+.footer-column {
+  padding-top: 6px;
+}
+
+.footer-heading {
+  position: relative;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #c19a4a;
+}
+
+.footer-heading::after {
+  content: "";
+  display: block;
+  width: 58px;
+  height: 1px;
+  margin-top: 14px;
+  background: #b89a62;
+}
+
+.footer-links {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-links a {
+  width: fit-content;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(247, 240, 227, 0.86);
+  text-decoration: none;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.footer-links a:hover {
+  color: #c19a4a;
+  transform: translateX(3px);
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(193, 154, 74, 0.32);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  color: #d8c9a9;
+}
+
+.footer-bottom-mark {
+  font-family: Georgia, serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #c19a4a;
+}
+
+@media (max-width: 900px) {
+  .footer-inner {
+    width: min(100% - 44px, 1380px);
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .footer-column {
+    padding-top: 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-inner {
+    width: min(100% - 32px, 1380px);
+    padding-top: 42px;
+  }
+
+  .footer-brand {
+    gap: 18px;
+  }
+
+  .footer-logo {
+    width: 62px;
+    height: 72px;
+  }
+
+  .footer-title {
+    font-size: 25px;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-rule {
+    width: 220px;
+  }
+
+  .footer-subtitle {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+
+  .footer-description {
+    font-size: 14px;
+  }
+}

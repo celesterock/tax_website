@@ -83,7 +83,7 @@
 
 .homepage-primary-button,
 .homepage-secondary-button {
-  min-height: 58px;
+  min-height: 40px;
   padding: 0 32px;
   border-radius: 0;
   font-size: 15px;
@@ -333,5 +333,341 @@
 
   .homepage-focus-title {
     font-size: 30px;
+  }
+}
+
+
+.homepage-section-inner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 64px, 1380px);
+  margin: 0 auto;
+}
+
+.homepage-intro-section,
+.homepage-services-section,
+.homepage-approach-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.homepage-section-eyebrow {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 18px;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #9f7435;
+}
+
+.homepage-section-eyebrow::after {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 1px;
+  margin-top: 16px;
+  background: #b89a62;
+}
+
+.homepage-section-title {
+  max-width: 560px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(42px, 4.2vw, 64px);
+  line-height: 0.98;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: #101b0b;
+}
+
+/* INTRO - DARK GREEN */
+
+.homepage-intro-section {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 27px,
+      rgba(193, 154, 74, 0.08) 27px,
+      rgba(193, 154, 74, 0.08) 28px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 27px,
+      rgba(193, 154, 74, 0.08) 27px,
+      rgba(193, 154, 74, 0.08) 28px
+    ),
+    radial-gradient(circle at top left, rgba(245, 233, 212, 0.045), transparent 34%),
+    linear-gradient(180deg, rgba(8, 23, 11, 0.98), rgba(6, 17, 7, 0.98));
+  border-top: 1px solid rgba(193, 154, 74, 0.7);
+  border-bottom: 1px solid rgba(193, 154, 74, 0.7);
+  padding: 86px 0;
+  color: #f7f0e3;
+}
+
+.homepage-intro-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 92px;
+  align-items: start;
+}
+
+.homepage-intro-section .homepage-section-title {
+  color: #f7f0e3;
+}
+
+.homepage-intro-copy {
+  max-width: 760px;
+  padding-top: 40px;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #d8c9a9;
+}
+
+.homepage-intro-copy p + p {
+  margin-top: 26px;
+}
+
+/* SERVICES - LIGHT CREAM */
+
+.homepage-services-section {
+  background: #e8ded0;
+  border-top: 1px solid rgba(184, 154, 98, 0.28);
+  border-bottom: 1px solid rgba(184, 154, 98, 0.28);
+  padding: 84px 0 92px;
+  color: #101b0b;
+}
+
+.homepage-services-section .homepage-section-title {
+  color: #101b0b;
+}
+
+.homepage-services-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.homepage-section-button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.homepage-section-button:hover {
+  color: #101b0b;
+}
+
+.homepage-services-grid {
+  margin-top: 52px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid rgba(184, 154, 98, 0.42);
+  background: rgba(247, 240, 227, 0.42);
+}
+
+.homepage-service-card {
+  min-height: 300px;
+  padding: 34px 30px;
+  border-right: 1px solid rgba(184, 154, 98, 0.3);
+  background:
+    radial-gradient(circle at top left, rgba(184, 154, 98, 0.06), transparent 34%),
+    rgba(247, 240, 227, 0.42);
+  transition:
+    background 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.homepage-service-card:last-child {
+  border-right: 0;
+}
+
+.homepage-service-card:hover {
+  background: rgba(253, 248, 236, 0.72);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(16, 27, 11, 0.08);
+}
+
+.homepage-service-rule {
+  width: 58px;
+  height: 1px;
+  margin-bottom: 28px;
+  background: #9f7435;
+}
+
+.homepage-service-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 30px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #101b0b;
+}
+
+.homepage-service-text {
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5c5548;
+}
+
+/* APPROACH - LIGHT CREAM */
+
+.homepage-approach-section {
+  background: #e8ded0;
+  padding: 94px 0;
+}
+
+.homepage-approach-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.homepage-approach-card {
+  background:
+    radial-gradient(circle at top left, rgba(245, 233, 212, 0.055), transparent 34%),
+    linear-gradient(180deg, rgba(11, 31, 15, 0.98), rgba(7, 20, 7, 0.99));
+  box-shadow: 0 24px 50px rgba(16, 27, 11, 0.22);
+  border: 1px solid rgba(193, 154, 74, 0.72);
+}
+
+.homepage-approach-card-inner {
+  margin: 18px;
+  padding: 46px 44px;
+  border: 1px solid rgba(193, 154, 74, 0.38);
+}
+
+.homepage-dark-eyebrow {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #c9b48a;
+}
+
+.homepage-dark-title {
+  margin-top: 22px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(40px, 4vw, 58px);
+  line-height: 0.98;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: #f7f0e3;
+}
+
+.homepage-dark-text {
+  margin-top: 26px;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #d8c9a9;
+}
+
+.homepage-approach-list {
+  display: grid;
+  gap: 30px;
+}
+
+.homepage-approach-item {
+  position: relative;
+  padding: 0 0 30px 34px;
+  border-bottom: 1px solid rgba(184, 154, 98, 0.38);
+}
+
+.homepage-approach-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.homepage-approach-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 1px;
+  height: calc(100% - 34px);
+  background: #b89a62;
+}
+
+.homepage-approach-item h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 700;
+  color: #101b0b;
+}
+
+.homepage-approach-item p {
+  margin-top: 12px;
+  max-width: 680px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #5c5548;
+}
+
+@media (max-width: 1000px) {
+  .homepage-section-inner {
+    width: min(100% - 44px, 1380px);
+  }
+
+  .homepage-intro-grid,
+  .homepage-approach-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .homepage-intro-copy {
+    padding-top: 0;
+  }
+
+  .homepage-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .homepage-service-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  .homepage-service-card:nth-child(1),
+  .homepage-service-card:nth-child(2) {
+    border-bottom: 1px solid rgba(184, 154, 98, 0.3);
+  }
+}
+
+@media (max-width: 640px) {
+  .homepage-intro-section,
+  .homepage-services-section,
+  .homepage-approach-section {
+    padding: 64px 0;
+  }
+
+  .homepage-section-inner {
+    width: min(100% - 32px, 1380px);
+  }
+
+  .homepage-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .homepage-service-card {
+    border-right: 0;
+    border-bottom: 1px solid rgba(184, 154, 98, 0.3);
+  }
+
+  .homepage-service-card:last-child {
+    border-bottom: 0;
+  }
+
+  .homepage-approach-card-inner {
+    margin: 12px;
+    padding: 34px 26px;
   }
 }
