@@ -22,7 +22,7 @@ export default function Footer() {
               </div>
 
               <p className="footer-description">
-                Thoughtful tax preparation and planning for individuals, families,
+                Tax preparation and planning for individuals, families,
                 business owners, estates, and trusts.
               </p>
             </div>
@@ -36,6 +36,7 @@ export default function Footer() {
               <Link to="/services">Services</Link>
               <Link to="/about">About</Link>
               <Link to="/contact">Contact</Link>
+              <Link to="/resources">Resources</Link>
             </div>
           </div>
 

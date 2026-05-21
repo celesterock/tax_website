@@ -1,0 +1,150 @@
+/* src/styles/terms-of-use.css */
+
+.terms-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(167, 122, 53, 0.14), transparent 32rem),
+    radial-gradient(circle at 88% 18%, rgba(24, 58, 49, 0.1), transparent 34rem),
+    linear-gradient(180deg, #f7f0e3 0%, #f3ead8 100%);
+  color: #1d211e;
+}
+
+.terms-container {
+  width: min(920px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 76px 0 96px;
+}
+
+.terms-card {
+  position: relative;
+  padding: 52px 56px 58px;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 244, 0.9), rgba(249, 243, 231, 0.76));
+  border: 1px solid rgba(167, 122, 53, 0.32);
+  border-left: 4px solid #a77a35;
+  box-shadow: 0 18px 52px rgba(54, 42, 25, 0.075);
+}
+
+.terms-card::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(167, 122, 53, 0.12);
+  pointer-events: none;
+}
+
+.terms-eyebrow,
+.terms-title,
+.terms-rule,
+.terms-content {
+  position: relative;
+  z-index: 1;
+}
+
+.terms-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #8c6a35;
+}
+
+.terms-title {
+  margin: 16px 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.65rem, 5vw, 4.4rem);
+  line-height: 0.98;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  color: #183a31;
+}
+
+.terms-rule {
+  width: min(360px, 100%);
+  height: 1px;
+  margin: 26px 0 38px;
+  background: linear-gradient(
+    90deg,
+    #8c6a35,
+    #d6bc78,
+    rgba(167, 122, 53, 0)
+  );
+}
+
+.terms-content {
+  display: grid;
+  gap: 34px;
+  color: #4f4a40;
+}
+
+.terms-content p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.terms-content section {
+  padding-top: 2px;
+}
+
+.terms-content h2 {
+  margin: 0 0 12px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.65rem, 2.2vw, 2.15rem);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: #183a31;
+}
+
+.terms-content section p {
+  padding-left: 20px;
+  border-left: 1px solid rgba(167, 122, 53, 0.52);
+  color: #5c5548;
+}
+
+@media (max-width: 760px) {
+  .terms-container {
+    width: min(100% - 36px, 920px);
+    padding: 54px 0 72px;
+  }
+
+  .terms-card {
+    padding: 40px 30px 44px;
+  }
+
+  .terms-title {
+    font-size: clamp(2.35rem, 11vw, 3.4rem);
+  }
+
+  .terms-content {
+    gap: 30px;
+  }
+
+  .terms-content p {
+    font-size: 0.98rem;
+    line-height: 1.78;
+  }
+
+  .terms-content section p {
+    padding-left: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .terms-container {
+    width: min(100% - 28px, 920px);
+  }
+
+  .terms-card {
+    padding: 34px 22px 38px;
+  }
+
+  .terms-card::after {
+    inset: 9px;
+  }
+
+  .terms-rule {
+    margin: 22px 0 32px;
+  }
+}

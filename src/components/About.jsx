@@ -1,19 +1,20 @@
+// src/components/About.jsx
+
 import devinPhoto from "../assets/devin.png";
 import "../styles/about.css";
 
 export default function About() {
   return (
     <div className="about-page">
-      <section className="about-main-section">
-        <div className="about-main-inner">
-          {/* LEFT SIDE - NARRATIVE */}
-          <div className="about-narrative">
-            <div className="about-narrative-inner">
-              <div className="about-section-label">Professional Background</div>
+      <main>
+        <section className="about-section">
+          <div className="about-container about-grid">
+            <div className="about-narrative">
+              <div className="about-eyebrow">Professional Background</div>
 
-              <h2 className="about-section-title">
+              <h1 className="about-title">
                 Tax guidance with a practical, client-centered perspective.
-              </h2>
+              </h1>
 
               <div className="about-copy">
                 <p>
@@ -45,41 +46,51 @@ export default function About() {
                 </p>
               </div>
             </div>
+
+            <aside className="about-sidebar" aria-label="Credentials and education">
+              <div className="about-photo-card">
+                <div className="about-photo-frame">
+                  <img
+                    src={devinPhoto}
+                    alt="Devin Foley"
+                    className="about-photo"
+                  />
+                </div>
+              </div>
+
+              <div className="about-info-card">
+                <div className="about-card-rule" />
+                <p className="about-card-label">Credentials</p>
+
+                <div className="about-card-list">
+                  <p>CTEC Registered Tax Preparer (California)</p>
+                  <p>7+ Years of Professional Experience</p>
+                </div>
+              </div>
+
+              <div className="about-info-card">
+                <div className="about-card-rule" />
+                <p className="about-card-label">Practice Focus</p>
+
+                <div className="about-card-list">
+                  <p>Individual &amp; business tax preparation</p>
+                  <p>Tax planning &amp; strategy</p>
+                </div>
+              </div>
+
+              <div className="about-info-card">
+                <div className="about-card-rule" />
+                <p className="about-card-label">Education - CSU Fullerton</p>
+
+                <div className="about-card-list">
+                  <p>Bachelor of Business Administration (Accounting)</p>
+                  <p>Master of Taxation</p>
+                </div>
+              </div>
+            </aside>
           </div>
-
-          {/* RIGHT SIDE - PHOTO + CARDS */}
-          <aside className="about-sidebar">
-            <div className="about-photo-frame">
-              <img src={devinPhoto} alt="Devin Foley" className="about-photo" />
-            </div>
-
-            <div className="about-info-card">
-              <div className="about-card-label">Credentials</div>
-              <div className="about-card-text">
-                CTEC Registered Tax Preparer (California)
-              </div>
-            </div>
-
-            <div className="about-info-card">
-              <div className="about-card-label">
-                7+ Years of Professional Experience
-              </div>
-              <div className="about-card-text">
-                Individual &amp; business tax preparation
-              </div>
-              <div className="about-card-text">Tax planning &amp; strategy</div>
-            </div>
-
-            <div className="about-info-card">
-              <div className="about-card-label">Education - CSU Fullerton</div>
-              <div className="about-card-text">
-                Bachelor of Business Administration (Accounting)
-              </div>
-              <div className="about-card-text">Master of Taxation</div>
-            </div>
-          </aside>
-        </div>
-      </section>
+        </section>
+      </main>
     </div>
   );
 }

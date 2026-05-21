@@ -61,11 +61,10 @@ export default function Navbar() {
             <NavLink to="/about">About</NavLink>
             <NavLink to="/resources">Resources</NavLink>
             <NavLink to="/contact">Contact</NavLink>
-            <NavLink to="/client-portal">Client Portal</NavLink>
           </nav>
 
-          <Link to="/contact" className="navbar-cta">
-            Schedule Consultation
+          <Link to="/portal" className="navbar-cta">
+            Client Portal
           </Link>
         </div>
 
